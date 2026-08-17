@@ -9,3 +9,7 @@ variable "environment" {
 /* variable "name" {
     default = "${var.project}-${var.environment}"
 } */
+
+variable "instance_type" {
+    default = "t3.micro"
+}
