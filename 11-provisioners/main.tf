@@ -26,7 +26,7 @@ tags = {
     host        = self.public_ip
   }
 
-   provisioner "remote-exec" {
+ /*   provisioner "remote-exec" {
     inline = [
        "sudo dnf install nginx -y",
        "sudo systemctl start nginx"
@@ -38,12 +38,12 @@ tags = {
      inline = [
        "sudo systemctl stop nginx"
     ]
-  }
+  } */
 
-    /* provisioner "file-exec"{
-      source = "script.sh"
-      destination = "/tmp/script.sh"
-    } */
+    provisioner "file"{
+      source = "script.sh" #local path
+      destination = "/tmp/script.sh" #remote path
+    }
 }
 
 #It creates default vpc in case if we dont mention any
